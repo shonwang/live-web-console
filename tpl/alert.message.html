@@ -1,0 +1,10 @@
+<% if (data.isClose) { %>  
+<div class="alert alert-dismissable <%=data.type%>">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <strong><%=data.message%></strong>
+</div>
+<% } else { %>
+<div class="alert <%=data.type%>">
+    <strong><%=data.message%></strong>
+</div>
+<% } %> 

@@ -1,0 +1,22 @@
+<form class="form-horizontal">
+    <div class="form-group">
+        <div class="col-sm-6">当前观看人数：<span class="text-warning"><%=data.onlinePersionCount%></span></div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <span>已有直播数：</span>
+            <span class="text-primary"><%=data.liveCount%></span>
+            <span>正在直播数：</span>
+            <span class="text-primary"><%=data.onlineLiveCount%></span>
+        </div>
+    </div>
+    <% for(var i = 0; i < data.storeKeys.length; i++) { %>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <span class="text-primary"><%=data.storeKeys[i]%></span>
+            <span>存储占用空间：</span>
+            <span class="text-primary"><%=data.store[data.storeKeys[i]]%></span>
+        </div>
+    </div>
+    <% } %> 
+</form>

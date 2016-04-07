@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CDN使用说明V1.1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>快速开始</h1>
+<p>金山云CDN服务将用户内容分发到全球700余个边缘节点，提高用户访问网站的响应速度与网站的可用性，通过智能监控实时调度异常节点资源，保证全局性能和可用性, 控制台可以帮助用户完成新增CDN加速域名、刷新/预加载缓存目录、URL等配置任务，并提供数据分析等统计图表。本文档主要介绍CDN控制台操作手册。</p>
+<h1>新增CDN加速域名</h1>
+<hr />
+<p>申请开通CDN产品，登录金山云CDN控制台，选择自助配置，点击【新增域名】按钮，开始添加域名</p>
+<h2>1. 填写基本信息</h2>
+<p>填写需要加速的加速域名，选择加速类型，并选择回源方式</p>
+<p>特别注意：</p>
+<ul>
+<li>加速域名需为备案过，且未在金山云加速过的域名，添加域名需符合域名组成规则，否则可能添加不成功或者审核不成功。</li>
+<li>回源方式为域名回源时，加速域名和回源域名不能为同一个域名，否则校验将不通过</li>
+</ul>
+<p><img src="http://wendangimg.kssws.ks-cdn.com/cdn-img/1A1350%3D%E8%87%AA%E5%8A%A9%E9%85%8D%E7%BD%AE%E7%AC%AC%E4%B8%80%E6%AD%A5.png" alt="cmd-markdown-logo" /></p>
+<h2>2. 填写配置信息</h2>
+<p>缓存配置和防盗链设置</p>
+<ul>
+<li>
+<p>缓存配置可以按照文件的类型、加速服务目录、具体加速URL进行设置。</p>
+<ul>
+<li>可以添加多条，若添加有重复，最后添加的先生效，文件类型的设置优先级高于目录设置</li>
+<li>若想设置文件不缓存，将文件过期时间设置为0即可</li>
+<li>开启忽略问号后面的参数可以减少一部分的回源，同时提高命中率，此功能需按照业务情况选择是否使用</li>
+</ul>
+</li>
+<li>防盗链配置支持referer和IP的黑白名单，可以组合使用，同一项的黑白名单互斥。
+开启支持空referer只在使用了referer白名单时生效
+<img src="http://wendangimg.kssws.ks-cdn.com/cdn-img/2A1350%3D535%E8%87%AA%E5%8A%A9%E9%85%8D%E7%BD%AE%E7%AC%AC%E4%BA%8C%E6%AD%A5%E7%BC%93%E5%AD%98%E8%AE%BE%E7%BD%AE.png" alt="cmd-markdown-logo" />
+<img src="http://wendangimg.kssws.ks-cdn.com/cdn-img/3A1350%3D535%E8%87%AA%E5%8A%A9%E9%85%8D%E7%BD%AE%E6%B7%BB%E5%8A%A0%E7%BC%93%E5%AD%98%E8%A7%84%E5%88%99.png" alt="cmd-markdown-logo" />
+<img src="http://wendangimg.kssws.ks-cdn.com/cdn-img/4A1350%3D642%E8%87%AA%E5%8A%A9%E9%85%8D%E7%BD%AE%E9%98%B2%E7%9B%97%E9%93%BE.png" alt="cmd-markdown-logo" /></li>
+</ul>
+<h2>3. 确认信息</h2>
+<p>本页会将申请的加速域名的信息全部罗列，您可以检查域名添加申请所写内容是否正确完整，若有需要修改可点击上一步返回第二步进行修改，若确认，则可以点击下一步确认信息进行配置审核过程
+<img src="http://wendangimg.kssws.ks-cdn.com/cdn-img/5A1350%3D%E8%87%AA%E5%8A%A9%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF%E7%A1%AE%E8%AE%A4.png" alt="cmd-markdown-logo" /></p>
+<h2>4. 审核</h2>
+<p>域名添加申请提交后，会进入审核配置阶段，会在1至2个工作日给您反馈结果。此时，您可以点击【返回自助配置首页】查看域名状态
+<img src="http://wendangimg.kssws.ks-cdn.com/cdn-img/6A1350%3D445%E8%87%AA%E5%8A%A9%E9%85%8D%E7%BD%AE%E7%A1%AE%E8%AE%A4%E9%A1%B5.png" alt="cmd-markdown-logo" /></p>
+<h2>5. 配置完成</h2>
+<p>配置完成后可以看到所有添加的域名的状态，并可以对加速域名进行配置的增、删、改、查操作</p>
+<ul>
+<li>新申请的域名会处于审核中状态，审核中的域名可进行配置查看或将申请删除，不可进行配置修改</li>
+<li>审核失败可能是由于未备案、一级域名违法查处等原因导致审核失败</li>
+<li>域名添加审核通过，域名会处于正常运行状态，此时域名加速已经配置完毕，您可以随时切换至给出的CNAME使用金山云CDN服务</li>
+<li><img src="http://wendangimg.kssws.ks-cdn.com/cdn-img/7A1350%3D415%E8%87%AA%E5%8A%A9%E9%85%8D%E7%BD%AE%E6%9F%A5%E7%9C%8B%E9%A6%96%E9%A1%B5.png" alt="cmd-markdown-logo" /></li>
+</ul>
+<h3>5.1 对添加的域名进行配置管理</h3>
+<p>正常运行中的域名可以对回源方式、缓存规则、防盗链进行增、删修改</p>
+<h1>内容管理</h1>
+<p>本页可以针对账号下加速域名进行刷新和预加载操作</p>
+<ul>
+<li>刷新分为目录刷新和URL刷新，各项操作条数每日均有限制</li>
+<li>可以对刷新和预加载进行操作记录查询，最多可查询最近三天的操作记录
+<img src="http://wendangimg.kssws.ks-cdn.com/cdn-img/8A1350%3D580%E5%86%85%E5%AE%B9%E7%AE%A1%E7%90%86.png" alt="cmd-markdown-logo" /></li>
+</ul>
+<h1>概况汇总</h1>
+<hr />
+<p>本页将显示此账号使用CDN的情况，您可以看到一共添加了多少个域名，以及有多少个域名是正常使用状态等服务情况
+<img src="http://wendangimg.kssws.ks-cdn.com/cdn-img/9A1350%3D435%E6%A6%82%E5%86%B5%E6%B1%87%E6%80%BB.png" alt="cmd-markdown-logo" /></p>
+<h1>带宽查询</h1>
+<hr />
+<p>可以按照加速域名和时间维度组合进行查询，默认显示当天所有加速域名的使用带宽和流量汇总情况。
+<img src="http://wendangimg.kssws.ks-cdn.com/cdn-img/10A1350%3D612%E5%B8%A6%E5%AE%BD%E6%9F%A5%E8%AF%A2.png" alt="cmd-markdown-logo" /></p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

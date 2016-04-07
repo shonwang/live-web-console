@@ -1,0 +1,53 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox">
+                      <span class="checkbox-material">
+                          <span class="check">
+                      </span>
+                  </span>
+              </label>
+          </div>
+        </th>
+        <th>创建时间</th>
+        <th>文件名称</th>
+        <th>直播ID</th>
+        <th>直播名称</th>
+        <th>直播状态</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% for(var i = 0; i < data.length; i++) { %>  
+        <tr data-id="<%=data[i].attributes['id']%>">
+          <th scope="row">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="<%=data[i].attributes['id']%>" <% if (data[i].attributes["isChecked"]) { %>checked="true"<% } %>>
+                        <span class="checkbox-material">
+                            <span class="check">
+                        </span>
+                    </span>
+                </label>
+            </div>
+          </th>
+          <td><%=data[i].attributes["updateTimeFormated"]%></td>
+          <td><%=data[i].attributes["filename"]%></td>
+          <td><%=data[i].attributes["liveId"]%></td>
+          <td><%=data[i].attributes["liveName"]%></td>
+          <td><%=data[i].attributes["statusName"]%></td>
+          <td>
+              <a href="javascript:void(0)" id="<%=data[i].attributes['id']%>" index="<%=i%>" class="view" title="查看">
+                  <span class="glyphicon glyphicon-eye-open"></span>
+              </a>
+              <a href="javascript:void(0)" id="<%=data[i].attributes['id']%>" class="delete" title="删除">
+                  <span class="glyphicon glyphicon-trash"></span>
+              </a>
+          </td>
+        </tr>
+    <% } %>  
+    </tbody>
+</table>

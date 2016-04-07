@@ -1,0 +1,48 @@
+<div class="table-responsive">
+<table class="table table-striped" style="margin-bottom:0px">   
+    <thead>
+        <tr>
+            <th style="min-width:100px">推流地址</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i = 0; i < data.pushURLs.length; i++) { %> 
+        <tr>
+            <td style="min-width:100px">
+                <a href="javascript:void(0)" url="<%=data.pushURLs[i]%>" liveid="<%=data.liveId%>" class="push">
+                    <span class="glyphicon glyphicon-facetime-video"></span>推流
+                </a>
+            </td>
+            <td>
+                <a href="javascript:void(0)" url="<%=data.pushURLs[i]%>" class="qrcode">
+                    <span class="glyphicon glyphicon-qrcode"></span>
+                </a>
+            </td>
+            <td><%=data.pushURLs[i]%></td>
+        </tr>
+        <% } %> 
+        <tr>
+            <th style="min-width:100px">拉流地址</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <% for(var i = 0; i < data.pullURLs.length; i++) { %> 
+        <tr>
+            <td style="min-width:100px">
+                <a href="javascript:void(0)" url="<%=data.pullURLs[i]%>" class="play">
+                    <span class="glyphicon glyphicon-play-circle"></span>播放
+                </a>
+            </td>
+            <td>
+                <a href="javascript:void(0)" url="<%=data.pullURLs[i]%>" class="qrcode">
+                    <span class="glyphicon glyphicon-qrcode"></span>
+                </a>
+            </td>
+            <td><%=data.pullURLs[i]%></td>
+        </tr>
+        <% } %> 
+    </tbody>
+</table>
+</div>

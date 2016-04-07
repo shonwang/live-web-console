@@ -1,0 +1,77 @@
+<div class="publish-panel">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-inline">
+                <div class="form-group hls-delay">
+                    <label>HLS延时：</label>
+                    <div class="drop-ctn">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <span id="cur-value">加载中...</span>
+                            <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group delayed-ctn">
+                    <input type="text" class="form-control" id="delayed" placeholder="单位：秒">
+                </div>
+                <div class="form-group delayed-alert">
+                    <div class="form-control-static alert alert-warning">此选项用来控制HLS切片播放长度，低延时为5秒；如果选择高延时，请填写延时时间，单位：秒，范围为6-20秒。</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><label>发布节点：</label></div>
+    </div>
+    <div class="row default-node">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="radio">
+                <label for="typeRadios1">
+                    <input type="radio" name="typeRadios" id="typeRadios1" value="0" <% if (data.publishSetup.publishType == 0) { %>checked="true"<% } %>>
+                        <span class="circle"></span>
+                        <span class="check"></span>
+                        发布到最近节点(默认)
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row custom-node">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="radio">
+                <label for="typeRadios2">
+                    <input type="radio" name="typeRadios" id="typeRadios2" value="1" <% if (data.publishSetup.publishType == 1) { %>checked="true"<% } %>>
+                        <span class="circle"></span>
+                        <span class="check"></span>
+                        自定义发布节点
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row custom-node-detail">
+        <div class="col-md-offset-2 col-md-10">
+            <form class="form-inline">
+                <% for(var i = 0; i < data.publishNodeList.length; i++) { %>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="<%=data.publishNodeList[i]['locationId']%>" <% if (data.publishSetup.publishNode[data.publishNodeList[i]['locationId']]) { %>checked="true"<% } %>>
+                                <span class="checkbox-material">
+                                    <span class="check"></span>
+                                </span>
+                                <%=data.publishNodeList[i]["name"]%>
+                        </label>
+                    </div>
+                </div>
+                <% } %> 
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="text-align:center">
+            <a href="javascript:void(0)" class="btn btn-primary submit-delayed">提交</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                推流黑白名单
+            </a>
+        </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel">
+        <div class="panel-body">
+            <form class="form-inline">
+                <div class="form-group">
+                    <div class="radio">
+                        <label for="pushSecurity1">
+                            <input type="radio" name="pushSecurityRadio" id="pushSecurity1" value="1" checked="true">
+                                <span class="circle"></span>
+                                <span class="check"></span>
+                                白名单
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="radio">
+                        <label for="pushSecurity2">
+                            <input type="radio" name="pushSecurityRadio" id="pushSecurity2" value="2">
+                                <span class="circle"></span>
+                                <span class="check"></span>
+                                黑名单
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="radio">
+                        <label for="pushSecurity3">
+                            <input type="radio" name="pushSecurityRadio" id="pushSecurity3" value="3">
+                                <span class="circle"></span>
+                                <span class="check"></span>
+                                关闭
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <p>请输入您允许访问的IP地址，多个地址之间用逗号(,)分开，并检查所填IP是否正确。</p>
+                <p>请输入您要拦截的IP地址，多个地址之间用逗号(,)分开，并检查所填IP是否正确。</p>
+            </div>
+            <p>白名单列表</p>
+            <textarea class="form-control" rows="5"></textarea>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="security-panel">
+    <div class="row">
+        <div class="col-md-12 error-ctn"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion" role="tablist">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                鉴权
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel">
+                        <div class="panel-body">
+                            <div class="alert alert-warning alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong>注意：</strong>
+                                <p>此功能主要设置推流时是否开启鉴权，打开时推流会携带鉴权信息，默认鉴权的过期时间为 3600 秒，可在新建直播时根据需要自行修改鉴权的过期时间。</p>
+                            </div>
+                            <form class="form-inline">
+                                <div class="form-group acl-ctn">
+                                    <label style="margin-right:5px;">是否开启鉴权：</label>
+                                    <div class="togglebutton drop-ctn">
+                                        <label>
+                                            <input type="checkbox"><span class="toggle"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                防盗链
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body">
+                            <form class="form-inline">
+                                <div class="form-group antileech-bucket">
+                                    <label>Bucket：</label>
+                                    <div class="drop-ctn">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span id="cur-value">加载中...</span>
+                                            <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu long-dropdown-menu"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="antileech-ctn"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="text-align:center">
+            <a href="javascript:void(0)" class="btn btn-primary submit-security">提交</a>
+        </div>
+    </div>
+</div>

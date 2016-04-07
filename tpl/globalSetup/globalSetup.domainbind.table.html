@@ -1,0 +1,50 @@
+<table class="table table-striped table-responsive">
+    <thead>
+      <tr>
+<!--         <th>
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox">
+                      <span class="checkbox-material">
+                          <span class="check">
+                      </span>
+                  </span>
+              </label>
+          </div>
+        </th> -->
+        <th>域名</th>
+        <th>状态</th>
+        <th>创建时间</th>
+        <th>最后修改时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% for(var i = 0; i < data.length; i++) { %>  
+        <tr data-id="<%=data[i].attributes['id']%>">
+<!--           <th scope="row">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="<%=data[i].attributes['id']%>">
+                        <span class="checkbox-material">
+                            <span class="check">
+                        </span>
+                    </span>
+                </label>
+            </div>
+          </th> -->
+          <td><%=data[i].attributes["userDomain"]%></td>
+          <td><%=data[i].attributes["statusName"]%></td>
+          <td><%=data[i].attributes["createTimeFormated"]%></td>
+          <td><%=data[i].attributes["updateTimeFormated"]%></td>
+          <td>
+              <% if(data[i].attributes['status'] !== 0) { %>  
+                  <a href="javascript:void(0)" id="<%=data[i].attributes['id']%>" class="delete" title="删除">
+                      <span class="glyphicon glyphicon-trash"></span>
+                  </a>
+              <% } %>
+          </td>
+        </tr>
+    <% } %>  
+    </tbody>
+</table>

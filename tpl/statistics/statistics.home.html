@@ -1,0 +1,84 @@
+<div class="statistics-pannel ksc-tab">
+    <h2 class="ksc-title-2">统计报表</h2>
+    <div class="well">
+        <div class="row opt-ctn">
+            <div class="col-md-12">
+                <form class="form-inline">
+                    <div class="form-group region" style="display:none">
+                        <label>地区</label>
+                        <div class="drop-ctn">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span id="cur-value">中国标准</span>
+                                <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group bucket" style="display:none">
+                        <label>Bucket</label>
+                        <div class="drop-ctn">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span id="cur-value">加载中...</span>
+                                <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu long-dropdown-menu"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group orther option1" style="display:none">
+                        <label>业务</label>
+                        <div class="drop-ctn">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span id="cur-value">并发数</span>
+                                <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group date-group drop-ctn">
+                        <div class="btn-group" role="group">
+                          <button type="button" class="btn btn-default active" id="seven-days">近7天</button>
+                          <button type="button" class="btn btn-default" id="thirty-days">近30天</button>
+                          <button type="button" class="btn btn-default" id="month">当月</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default calendar"></button>
+                    <button type="button" class="btn btn-default calendar-single" style="display:none"></button>
+                    <a href="javascript:void(0)" class="btn btn-sm btn-primary btn-apply">应用</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a data-target="#flow-statistics" data-toggle="tab">流量统计</a>
+        </li>
+        <li>
+            <a data-target="#bandwidth-statistics" data-toggle="tab">带宽统计</a>
+        </li>
+        <li>
+            <a data-target="#usernum-statistics" data-toggle="tab">用户数统计</a>
+        </li>
+        <li>
+            <a data-target="#storage-statistics" data-toggle="tab">存储容量</a>
+        </li>
+        <li>
+            <a data-target="#business-analysis" data-toggle="tab">业务分析</a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content well">
+        <div role="tabpanel" class="tab-pane fade in active" id="flow-statistics"></div>
+        <div role="tabpanel" class="tab-pane fade" id="bandwidth-statistics"></div>
+        <div role="tabpanel" class="tab-pane fade" id="usernum-statistics"></div>
+        <div role="tabpanel" class="tab-pane fade" id="storage-statistics"></div>
+        <div role="tabpanel" class="tab-pane fade" id="business-analysis"></div>
+    </div>
+    <p class="text-center">统计数据供参考，实际费用以帐单为准</p>
+</div>

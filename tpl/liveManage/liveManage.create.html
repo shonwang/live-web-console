@@ -1,0 +1,79 @@
+<div class="livemanage-create-panel ksc-tab">
+    <h2 class="ksc-title-2" style="display: none">直播管理<small>/新建直播</small></h2>
+    <div class="error-ctn"></div>
+    <div class="well">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>直播提示：</strong>
+                    直播严禁上传包括反动、暴力、色情、违法、及侵权内容的文件。金山云有义务配合有关部门将上传违规文件的用户信息保存，并保留因配合调查及冻结账号的权利。
+                </div>
+            </div>
+        </div>
+        <div class="row create-live-ctn">
+            <div class="col-md-12">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="live-id">直播名称</label>
+                        <input type="text" class="form-control create-input" id="live-name">
+                    </div>
+                    <div class="form-group expire-ctn" style="display:none">
+                        <label for="live-id">过期时间</label>
+                        <input type="text" class="form-control create-input" id="live-exprie" placeholder="单位：秒">
+                    </div>
+<!--                     <div class="form-group live-acl">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">
+                                    <span class="checkbox-material">
+                                        <span class="check"></span>
+                                    </span>
+                                    鉴权
+                            </label>
+                        </div>
+                    </div> -->
+                    <a href="javascript:void(0)" class="btn btn-success create-address">保存并生成直播推拉流地址</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active">
+                    <a data-target="#local-camera" data-toggle="tab" class="local-camera-tab">本地摄像头</a>
+                </li>
+                <li>
+                    <a data-target="#mobile-upload" data-toggle="tab">手机上传</a>
+                </li>
+                <li>
+                    <a data-target="#pc-tools" data-toggle="tab">PC端工具</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content well" style="min-height:300px;">
+                <div role="tabpanel" class="tab-pane fade in active" id="local-camera"></div>
+                <div role="tabpanel" class="tab-pane fade" id="mobile-upload"></div>
+                <div role="tabpanel" class="tab-pane fade" id="pc-tools"></div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="well">
+                <div class="player-ctn tc" id="ckplayer-ctn">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="well table-address bounceInDown animated">
+        <div class="row">
+            <div class="col-md-12 table-address-ctn"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 tc">
+            <a href="javascript:void(0)" class="btn btn-primary cancel">返回直播管理</a>
+        </div>
+    </div>
+</div>
